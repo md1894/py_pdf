@@ -1,0 +1,87 @@
+<APPINFO>
+logopath~/e-be/central.tcmcbc/logo.png
+mailfrom~chandwadbank.statement@gmail.com
+password~chandwad@123
+host~smtp.gmail.com
+savefilepath~/e-be/central.tcmcbc/LOG/STATEMENT/
+ISSENDPDF~TRUE
+</APPINFO>
+<STMT>
+<INPUTPARAM>
+ACTNO~0001240002883
+FDATE~01/04/2019
+TDATE~31/03/2020
+SUBJECT~CHANDWAD STATEMENT FROM 01/04/2019 TO 31/03/2020
+FNAME~CHANDWAD_0001240002883_2019/04/01_2020/03/31
+</INPUTPARAM>
+<BRPARA>
+BR_CODE~1
+BANKNAME~THE CHANDWAD MERCHANT'S CO-OP. BANK LTD.                    
+BRANCH_NAME~HEAD OFFICE                        
+ADDRESS1~KAMDHENU                           
+ADDRESS2~SHRIRAM ROAD                       
+ADDRESS3~                                   
+CITY~CHANDWAD                 
+PINCODE~423101
+IFSCCODE~ICIC00CMCBL
+MICR_CODE~422899501
+PHONE~02556252278                   
+</BRPARA>
+<ACTYPS>
+SCHM_NAME~MEMBER SHARE A\C                   
+</ACTYPS>
+<MASTER>
+ACTNO~0001240002883
+LONG_NAME~GUNJAL VIVEK DADAJI                     
+CATA_CODE~GLGN
+EMAILID~amitheda01@gmail.com                    
+ADDRESS1~AT POST DAVKHAR NAGAR CHANDWAD TAL 
+ADDRESS2~CHANDWAD DIST NASIK                
+ADDRESS3~                                   
+CITY~CHANDWAD                 
+PINCODE~423101
+MOBILE~9767513008
+PAN~ASIPG1401D
+AADHAR~293395924135
+OPENBAL~11,000.00
+DC~C
+</MASTER>
+<TRAN>
+<DET>
+TRAN_PART~Transaction Particular
+TRAN_DATE~Tran. Date
+CHQ_NO~Chq. No
+DEBIT~Debit
+CREDIT~Credit
+BALANCE~Balance
+DC~DC
+</DET>
+<DET>
+TRAN_PART~Opening Balance
+TRAN_DATE~
+CHQ_NO~
+DEBIT~
+CREDIT~
+BALANCE~11,000.00
+DC~Cr
+</DET>
+<DET>
+TRAN_PART~
+TRAN_DATE~
+CHQ_NO~
+DEBIT~
+CREDIT~
+BALANCE~
+DC~
+</DET>
+<DET>
+TRAN_PART~Closing Balance
+TRAN_DATE~
+CHQ_NO~Total
+DEBIT~0.00
+CREDIT~0.00
+BALANCE~11,000.00
+DC~Cr
+</DET>
+</TRAN>
+</STMT>
