@@ -1,8 +1,8 @@
 <APPINFO>
 logopath~logo.png
-mailfrom~chandwadbank.statement@gmail.com
-password~chandwad@123
-host~smtp.gmail.com
+
+
+
 savefilepath~/e-be/central.tcmcbc/LOG/STATEMENT/
 ISSENDPDF~TRUE
 </APPINFO>

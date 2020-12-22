@@ -1,0 +1,14 @@
+Account Statement
+Dear ${LONG_NAME}
+
+We would like to thank you for opting for E-Statements and helping us in our endeavor to be more environment friendly.
+
+Our E-statements now come to you in a better, easier to read and more comprehensive format than ever before! This E-Statement will provide you with a consolidated overview of your saving account with Bank where you are the first holder. It also provides you with additional information on your profile with us, your spends and general safety and security measures that are important to know. We hope you enjoy your new statement. Your Combined Email ${SUBJECT} is attached below.
+
+How to open your statement
+1. Your password is the combination of four letters of your name in UPPER CASE (as per the account name with us, if any) and last 4 digits of your Account no.
+
+For example
+If your name appears on statement as -> C.K.AMINA 	
+FIRST 4 characters of your name + LAST 4 digit actno -> C.K. + 0002	
+Your Combined Password -> C.K.0002 
