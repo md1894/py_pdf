@@ -84,11 +84,11 @@ def get_app_info(lines):
     global save_file_path
     global is_send_pdf
     logo_path = lines[1].split('~')[1].strip()
-    if len(from_mail_id) != 0: 
+    if len(lines[2].strip()) != 0: 
         from_mail_id = lines[2].split('~')[1].strip()
-    if len(from_mail_id_pass) != 0:
+    if len(lines[3].strip()) != 0:
         from_mail_id_pass = lines[3].split('~')[1].strip()
-    if len(host) != 0:
+    if len(lines[4].strip()) != 0:
         host = lines[4].split('~')[1].strip()
     save_file_path = lines[5].split('~')[1].strip()
     is_send_pdf = lines[6].split('~')[1].strip()
@@ -352,10 +352,10 @@ add_encryption(input_pdf=qualified_fname, output_pdf=qualified_fname_, password=
 os.system('rm -rf %s'%(qualified_fname)) # remove temporary file
 
 # gmail_password ==>> 1234*abcd
-is_send_pdf = 'TRUE'
+# is_send_pdf = 'TRUE'
 if is_send_pdf == 'TRUE':
-    MY_ADDRESS = 'mehulkimaya@gmail.com'
-    PASSWORD = '1234*abcd'
+    MY_ADDRESS = from_mail_id
+    PASSWORD = from_mail_id_pass
     s = smtplib.SMTP(host='smtp.gmail.com', port=587)
     s.starttls()
     s.login(MY_ADDRESS, PASSWORD)
