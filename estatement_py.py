@@ -366,6 +366,7 @@ if is_send_pdf == 'TRUE':
     attachment = open(qualified_fname_, "rb")
     p = MIMEBase('application', 'octet-stream')
     p.set_payload((attachment).read())
+    attachment.close()
     encoders.encode_base64(p)
     p.add_header('Content-Disposition', "attachment; filename= %s" % fname)
     msg.attach(p)
