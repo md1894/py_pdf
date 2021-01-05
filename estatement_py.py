@@ -2,12 +2,16 @@ from sys import argv
 from fpdf import FPDF
 import os
 from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF4 import PdfFileWriter as pfw_pypdf4
+from PyPDF4 import PdfFileReader as pfr_pypdf4
 from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase 
 from email import encoders 
 import smtplib
+import PyPDF4
+from PIL import Image
 
 # python pdf_creater.py 0_AccountStatement.LOG  :: --> to run through script
 
@@ -28,6 +32,11 @@ Version: 1.26.0
 Name: pyinstaller
 Version: 4.1
 Summary: PyInstaller bundles a Python application and all its dependencies into a single package.
+
+Name: PyPDF4
+Version: 1.27.0
+Summary: PDF toolkit (used to insert watermark)
+
 '''
 
 bank_name = ''
@@ -349,7 +358,34 @@ qualified_fname_ = '%s%s'%(save_file_path,fname)
 pdf.output(qualified_fname, 'F')
 passwd = long_name.strip()[:4] + account_no[-4:]
 add_encryption(input_pdf=qualified_fname, output_pdf=qualified_fname_, password=passwd)
+
+
+# PyPDF4.PdfFileReader(qualified_fname)
+
+# def put_watermark(input_pdf, output_pdf, watermark):
+# 	watermark_instance = pfr_pypdf4(watermark)
+# 	watermark_page = watermark_instance.getPage(0) 
+# 	pdf_reader = pfr_pypdf4(input_pdf)
+# 	pdf_writer = pfw_pypdf4()
+# 	for page in range(pdf_reader.getNumPages()): 
+# 		page = pdf_reader.getPage(page) 
+# 		page.mergePage(watermark_page) 
+# 		pdf_writer.addPage(page) 
+
+# 	with open(output_pdf, 'wb') as out:  
+# 		pdf_writer.write(out)
+
+
+# image1 = Image.open(r'logo.png')
+# im1 = image1.convert('RGB')
+# im1.save(r'wmfile.pdf')
+
+final_file_name = qualified_fname
+# put_watermark(input_pdf = qualified_fname_, output_pdf = final_file_name, watermark='wmfile.pdf')
 os.system('rm -rf %s'%(qualified_fname)) # remove temporary file
+# os.system('rm -rf %s wmfile.pdf'%(qualified_fname_)) # remove temporary file
+
+
 
 # gmail_password ==>> 1234*abcd
 # is_send_pdf = 'TRUE'
@@ -361,7 +397,7 @@ if is_send_pdf == 'TRUE':
     s.login(MY_ADDRESS, PASSWORD)
     msg = MIMEMultipart()
     msg['From']=MY_ADDRESS
-    msg['To'] = 'mehul.dubey@kimayainfotech.com'
+    msg['To'] = to_mail_id
     msg['Subject'] = subject
     attachment = open(qualified_fname_, "rb")
     p = MIMEBase('application', 'octet-stream')
